@@ -21,5 +21,5 @@
 ### Setup Steps
 1. **Clone the Repo**:
    ```bash
-   git clone https://github.com/yourusername/movie-recommendation-system.git
+   git clone https://github.com/Salar-X/Movie-recommendation-AI.git
    cd movie-recommendation-system
