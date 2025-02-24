@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>🎬 Movie Recommender</title>
+    <style>
+        body {
+            background-color: #121212;
+            color: #ffffff;
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            padding: 50px;
+            margin: 0;
+        }
+        h1 {
+            color: #bb86fc;
+            font-size: 2.5em;
+            margin-bottom: 30px;
+        }
+        form {
+            margin: 20px 0;
+        }
+        input[type="text"] {
+            padding: 12px;
+            width: 320px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1em;
+            background-color: #1e1e1e;
+            color: #ffffff;
+        }
+        input[type="submit"] {
+            padding: 12px 24px;
+            background-color: #bb86fc;
+            border: none;
+            border-radius: 8px;
+            color: #121212;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        input[type="submit"]:hover {
+            background-color: #9a67ea;
+        }
+        h2 {
+            color: #cf6679;
+            margin-top: 40px;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+            max-width: 500px;
+            margin: 20px auto;
+        }
+        li {
+            background-color: #1e1e1e;
+            padding: 10px;
+            margin: 8px 0;
+            border-radius: 5px;
+            font-size: 1.1em;
+        }
+    </style>
+</head>
+<body>
+    <h1>🎬 Movie Recommender</h1>
+    <form method="POST">
+        <input type="text" name="title" placeholder="Enter a movie title" required>
+        <input type="submit" value="Get Recommendations">
+    </form>
+    {% if recommendations %}
+        <h2>Recommendations for "{{ input_title }}"</h2>
+        <ul>
+        {% for movie in recommendations %}
+            <li>{{ movie }}</li>
+        {% endfor %}
+        </ul>
+    {% endif %}
+</body>
+</html>
